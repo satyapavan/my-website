@@ -4,6 +4,9 @@ addons:
   snaps:
   - hugo
 
+script:
+  - hugo -t beautifulhugo
+  
 deploy:
   provider: pages
   skip-cleanup: true
