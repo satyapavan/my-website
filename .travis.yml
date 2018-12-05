@@ -15,4 +15,4 @@ deploy:
   local-dir: public
   on:
     target-branch: master
-    repo: SatyaPavan.github.io
+    repo: satyapavan/SatyaPavan.github.io
