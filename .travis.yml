@@ -1,18 +1,46 @@
+# safelist
+branches:
+  only:
+  - development
+
+env:
+  global:
+  - USER="satyapavan"
+#  - EMAIL="username@mail.com" # This is added from settings
+  - REPO="SatyaPavan.github.io"
+  - GH_REPO="github.com/${USER}/${REPO}.git"
+  - MESSAGE="Travis build: $TRAVIS_BUILD_NUMBER"
+
 dist: xenial
 
 addons:
   snaps:
   - hugo
-
-script:
-  - hugo -t beautifulhugo
   
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in the settings  page of your repository, as a secure variable
-  keep-history: true
-  local-dir: public
-  on:
-    target-branch: master
-    repo: satyapavan/SatyaPavan.github.io
+script:
+  - export GIT_COMMIT_SHA=`git rev-parse --verify HEAD`
+  - export GIT_COMMIT_SHA_SHORT=`git rev-parse --short HEAD`
+  - export LAST_DEPLOYMENT_TIME="$(date +'%Y-%m-%d %T %Z')"
+  - hugo -t beautifulhugo
+
+after_success:
+  - pwd && mkdir /home/travis/build/satyapavan/my-site-generated && cd /home/travis/build/satyapavan/my-site-generated
+  - git clone git://${GH_REPO}
+  - pwd && cd SatyaPavan.github.io
+  - git checkout master
+  - cp -r /home/travis/build/satyapavan/my-website-sourcecode/public/* .
+  - sed -i.bak '206,230d' post/blog/index.html
+  - sed -i.bak '206,230d' post/projects/index.html
+  - git remote
+  - git config user.email ${EMAIL}
+  - git config user.name ${USER}
+  - git add --all
+  - git commit -m "${MESSAGE}"
+  - git push "https://${GITHUB_TOKEN}@${GH_REPO}" master > /dev/null 2>&1
+
+notifications:
+  email:
+    recipients:
+    - ${EMAIL}
+    on_success: never # default: change
+    on_failure: always # default: always
