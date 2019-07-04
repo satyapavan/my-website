@@ -6,9 +6,9 @@ draft: false
 
 _**Tuco**: [When you have to shoot, shoot. Don't talk.](https://www.imdb.com/title/tt0060196/quotes/qt0424823)_
 
-He would have said the same regarding this blog. What started as a "simple blog" project, transformed into a "Building a fullblown website and content management from scratch" project. Net result? 0 ROI.
+He would have said the same of this blog too. What started as a "simple blog" project, transformed into a "Building a fullblown website and content management from scratch" project. Net result? 0 ROI.
 
-Here are the key takeways for wannabe folks like me.
+From this experience, here are the key takeways for wannabe folks like me.
 
 1. **Focus on your goals**
    To improve my technical learning and writing skills, I wanted to start a blog. But being a techie, I felt I am a little over qualified to use blogging sites like wordpress/blogger and thought I should *code* my website from scratch. Good idea, only caveat is, I started spending my time trying to solve the wrong problems. CMS, static websites, zero code, responsive pages, are all very interesting topics and I learned a lot, but I didn't learn what I planned to learn.
