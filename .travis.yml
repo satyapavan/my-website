@@ -21,7 +21,7 @@ script:
   - export GIT_COMMIT_SHA=`git rev-parse --verify HEAD`
   - export GIT_COMMIT_SHA_SHORT=`git rev-parse --short HEAD`
   - export LAST_DEPLOYMENT_TIME="$(date +'%Y-%m-%d %T %Z')"
-  - hugo -t beautifulhugo
+  - hugo -t hugo-future-imperfect-slim
 
 after_success:
   - pwd && mkdir /home/travis/build/satyapavan/my-site-generated && cd /home/travis/build/satyapavan/my-site-generated
