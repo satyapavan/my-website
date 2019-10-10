@@ -29,12 +29,10 @@ after_success:
   - pwd && cd SatyaPavan.github.io
   - git checkout master
   - cp -r /home/travis/build/satyapavan/my-website-sourcecode/public/* .
-  - sed -i.bak '206,230d' post/blog/index.html
-  - sed -i.bak '206,230d' post/projects/index.html
   - git remote
   - git config user.email ${EMAIL}
   - git config user.name ${USER}
-  - git add --all
+  - git add -A
   - git commit -m "${MESSAGE}"
   - git push "https://${GITHUB_TOKEN}@${GH_REPO}" master > /dev/null 2>&1
 
