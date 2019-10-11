@@ -16,17 +16,16 @@ type = "post"
 A fork bomb works by creating a large number of processes very quickly in order to saturate the available space in the list of processes kept by the computer’s operating system. If the process table becomes saturated, no new programs may start until another process terminates. Even if that happens, it is not likely that a useful program may be started since the instances of the bomb program will each attempt to take any newly-available slot themselves.
 
 In addition to using space in the process table, each child process of a fork bomb uses further processor-time and memory. As a result of this, the system and existing programs slow down and become much more unresponsive and difficult or even impossible to use.
- 
-The following code provides arguably one of the most elegant examples of a fork bomb. The user executes the fork bomb by pasting the following 11 characters into a UNIX shell such as bash or zsh. 
 
+The following code provides arguably one of the most elegant examples of a fork bomb. The user executes the fork bomb by pasting the following 11 characters into a UNIX shell such as bash or zsh.
 
-```
+```bash
 :(){ :|:& };:
 ```
 
 Understanding the above:
 
-```
+```bash
 :()      # define ‘:’ – whenever we say ‘:‘, do this:
 {        # beginning of what to do when we say ‘:’
     :    # load another copy of the ‘:’ function into memory…
@@ -41,6 +40,7 @@ Understanding the above:
 ```
 
 To keep it simple,
-```
+
+```bash
 forkbomb(){ forkbomb|forkbomb & } ; forkbomb
 ```
