@@ -57,7 +57,7 @@ disableLanguages        = [""]
   # These are optional params related to the sidebar. They are recommended, but not
   # required for proper functionality. HTML is supported within the params.
   [params.intro]
-    header                = "Satya Pavan's<br>Serverless Soul"
+    header                = "Satya Pavan's<br><h2>Serverless Soul<h2>"
     paragraph             = "Orbiting in a 'PAVAN'tronic motion"
     rssIntro              = true
     socialIntro           = true
