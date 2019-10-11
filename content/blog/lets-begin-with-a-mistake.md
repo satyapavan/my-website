@@ -1,6 +1,7 @@
 +++
 author = "Satya Pavan"
-categories = ["learning"]
+categories = ["blog"]
+tags = ["learnings", "goals"]
 date = "2019-02-26"
 description = "If you want to eat bread, don't start building a bakery"
 #featured = "ugh_1024x.jpg"

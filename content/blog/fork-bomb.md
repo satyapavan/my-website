@@ -1,6 +1,7 @@
 +++
 title = "Fork bomb"
-categories = ["learning"]
+categories = ["blog"]
+tags = ["unix", "fork"]
 date = "2010-05-22"
 updated = 2010-05-22T12:20:25Z
 author = "Satya Pavan"

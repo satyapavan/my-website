@@ -1,6 +1,7 @@
 +++
 author = "Satya Pavan"
-categories = ["productivity"]
+categories = ["blog"]
+tags = ["productivity"]
 date = "2019-07-05"
 description = "Stop fretting about your github contributions graph"
 #featured = "productivity_1024x.jpg"
