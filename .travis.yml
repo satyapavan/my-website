@@ -28,10 +28,13 @@ after_success:
   - git clone git://${GH_REPO}
   - pwd && cd SatyaPavan.github.io
   - git checkout master
-  - cp -r /home/travis/build/satyapavan/my-website-sourcecode/public/* .
   - git remote
   - git config user.email ${EMAIL}
   - git config user.name ${USER}
+  - rm -rf *
+  - git add -A
+  - git commit -m "Destruction before Creation"
+  - cp -r /home/travis/build/satyapavan/my-website-sourcecode/public/* .
   - git add -A
   - git commit -m "${MESSAGE}"
   - git push "https://${GITHUB_TOKEN}@${GH_REPO}" master > /dev/null 2>&1
