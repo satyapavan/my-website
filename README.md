@@ -21,3 +21,8 @@ git rm themes/hugo-future-imperfect-slim
 git commit -m "Removed submodule "
 rm -rf .git/modules/themes/hugo-future-imperfect-slim/
 ```
+
+## For Adding a submodule with different name
+```
+git submodule add https://github.com/satyapavan/hugo-future-imperfect-slim-local-copy.git hugo-future-imperfect-slim/
+```
