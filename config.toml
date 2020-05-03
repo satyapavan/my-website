@@ -1,199 +1,115 @@
-baseurl                 = "https://SatyaPavan.github.io"
-DefaultContentLanguage  = "en"
-title                   = "Satya Pavan's Serverless Soul"
-theme                   = "hugo-future-imperfect-slim"
-preserveTaxonomyNames   = true
-paginate                = 3
-disqusShortname         = ""
-googleAnalytics         = "UA-111600714-1"
-pluralizeListTitles     = false
-disableLanguages        = [""]
+######################## default configuration ####################
+baseURL = "https://satyapavan.github.io/"
+languageCode = "en-us"
+title = "Satya Pavan's Serverless Soul"
+theme = "liva-hugo"
+summaryLength = "10"
+paginate = 6
+disqusShortname = ""
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
-[params]
-  # Loads CSS and JavaScript files. The variable is an array so that you can load
-  # multiple/additional files if necessary. The standard theme files can be loaded
-  # by adding the value, "default". Default includes the add-on.css and and-on.js.
-  # Example: ["default", "/path/to/file"]
-  cssFiles              = ["default"]
-  jsFiles               = ["default"]
-  # Sets options for highlight.js
-  highlightjs           = true
-  highlightjsTheme      = "github"
-  highlightjsLang       = ["html", "css", "js", "toml"]
-  # Sets where "View More Posts" links to
-  viewMorePostsLink     = "/post/blog/"
-  # Activate Estimated Reading Times, which appear in the post headers
-  readingTime           = true
-  # Sets which Social Share links appear in posts.
-  # Options are twitter, facebook, reddit, linkedin, pinterest, email
-  socialShare           = ["twitter", "facebook", "reddit", "linkedin",
-                          "pinterest", "email"]
+############################# Plugins ##############################
+[params.plugins]
 
-  [params.meta]
-    # Sets the meta tag description
-    description         = "A technical blog website of Satya Pavan, covering over different learnings, technologies and best practices."
-    # Sets the meta tag author
-    author              = "Satya Pavan"
-    # If you would like to add more comprehensive favicon support passed root
-    # directory favicon.ico, utlize this funtion. It is recommened to use
-    # https://realfavicongenerator.net to generate your icons as that is the basis
-    # for the theme's naming.
-    favicon             = false
-    svg                 = true
-    faviconVersion      = "1"
-    msColor             = "#ffffff" # Copy from the https://realfavicongenerator.net
-    iOSColor            = "#ffffff" # Copy from the https://realfavicongenerator.net
+  # CSS Plugins
+  [[params.plugins.css]]
+  URL = "plugins/bootstrap/bootstrap.min.css"
+  [[params.plugins.css]]
+  URL = "plugins/slick/slick.css"
+  [[params.plugins.css]]
+  URL = "plugins/themify-icons/themify-icons.css"
+  [[params.plugins.css]]
+  URL = "plugins/venobox/venobox.css"
 
-  [params.header]
-    # Sets the navbarTitle that appears in the top left of the navigation bar
-    navbarTitle         = "Serverless Soul"
-    # Sets navbarTitle to match the section of the website
-    dynamicTitles       = true
-    searchMenu          = true
-    shareMenu           = true
-    languageMenu        = true
+  # JS Plugins
+  [[params.plugins.js]]
+  URL = "plugins/jQuery/jquery.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/bootstrap/bootstrap.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/slick/slick.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/venobox/venobox.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/search/fuse.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/search/mark.js"
+  [[params.plugins.js]]
+  URL = "plugins/search/search.js"
 
-  # These are optional params related to the sidebar. They are recommended, but not
-  # required for proper functionality. HTML is supported within the params.
-  [params.intro]
-    header                = "Satya Pavan's<br><h2>Serverless Soul<h2>"
-    paragraph             = "Orbiting in a 'PAVAN'tronic motion"
-    rssIntro              = true
-    socialIntro           = true
-
-    # This appears at the top of the sidebar above params.intro.header.
-    # A width of less than 100px is recommended from a design perspective.
-    [params.intro.pic]
-      src                 = "/img/main/logo.jpg"
-      # Masks image in a certain shape. Supported are circle, triangle, diamond, and hexagon.
-      shape               = "hexagon"
-      width               = "80"
-      alt                 = "Serverless Soul"
-
-  [params.sidebar]
-    about               = "I built the internet"
-    # Sets the number of recent posts to show in the sidebar. The default value is 5.
-    postAmount          = 5
-    # set to show or to hide categories in the sidebar
-    categories          = true
-    # Sets Categories to sort by number of posts instead of alphabetical
-    categoriesByCount   = true
-
-  [params.footer]
-    # Sets RSS icons to appear on the sidebar with the social media buttons
-    rssFooter           = true
-    # Sets Social Media icons to appear on the sidebar
-    socialFooter        = true
-
-  # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
-  # due to its ease of use. Feel free to check out both and decide which you would
-  # prefer to use. See Staticman.yml for additional settings.
-  [params.staticman]
-    # Sets Statiman to be active
-    # If using GitHub, go to https://github.com/apps/staticman-net
-    # If using GitLab, just add the GitLab bot, NO need to hit `/connect/v3/...`
-    staticman           = false
-    # Sets the location for Staticman to connect to
-    api                 = "dev.staticman.net"  # without trailing slash
-    gitProvider         = "github"  # either "github" or "gitlab"
-    username            = ""
-    repo                = ""
-    branch              = ""
-
-    [params.staticman.recaptcha]
-      recaptcha         = false
-      siteKey           = "" # Site Key
-      encryptedKey      = ""
-
+  
+############################## navigation ###############################
 [menu]
-  # Sets the menu items in the navigation bar
-  # Identifier prepends a Font Awesome icon to the menu item
+  
+  # main menu
   [[menu.main]]
-    name              = "Home"
-    url               = "/"
-    identifier        = "fas fa-home"
-    weight            = 1
-
+  name = "About"
+  URL = "about"
+  weight = 1
+  
   [[menu.main]]
-    name              = "About"
-    url               = "/about/"
-    identifier        = "far fa-id-card"
-    weight            = 2
+  name = "Post"
+  URL = "blog"
+  weight = 2
 
   [[menu.main]]
-    name              = "Blog"
-    url               = "/blog/"
-    identifier        = "far fa-newspaper"
-    weight            = 3
+  name = "Tutorials"
+  URL = "tutorials"
+  weight = 3
+  
+  # footer menu
+  [[menu.footer]]
+  name = "About"
+  URL = "about"
+  weight = 1
+  
+  [[menu.footer]]
+  name = "Post"
+  URL = "blog"
+  weight = 2
 
-  [[menu.main]]
-    name              = "Categories"
-    url               = "/categories/"
-    identifier        = "fas fa-sitemap"
-    weight            = 5
 
-  [[menu.main]]
-    name              = "Contact"
-    url               = "/contact/"
-    identifier        = "far fa-envelope"
-    weight            = 6
+#################### default parameters ################################
+[params]
+logo = "images/logo.png"
+home = "Home"
+# Meta data
+description = "The Internet Manufacturer"
+author = "Satya Pavan"
+# Google Analitycs
+googleAnalitycsID = "UA-111600714-1"
+# Contact Information
+#mobile = "0124857985320"
+#email = "demo@email.com"
+#location = "Dhaka, Bangladedsh"
+# copyright
+copyright = "| deployed on __REPLACE__DEPLOY_TIME__ |"
 
-[Languages]
-  # Each language has its own menu.
-  [Languages.en]
-    languageCode        = "en"
-    LanguageName        = "English"
-    weight              = 1
+  # Preloader
+  [params.preloader]
+  enable = true
+  preloader = "" # use .png , .svg or .gif format
 
-# Sets Social Media icons to appear and link to your account. Value should be your
-# username unless otherwise noted. These are the icons affected by socialAppearAtTop
-# and socialAppearAtBottom.
-[social]
-  # Coding Communities
-  github                = "satyapavan"
-  gitlab                = "satyapavan"
-  stackoverflow         = "1790234" # User Number
-  bitbucket             = ""
-  jsfiddle              = ""
-  codepen               = ""
-  # Visual Art Communities
-  deviantart            = ""
-  flickr                = ""
-  behance               = ""
-  dribbble              = ""
-  # Publishing Communities
-  wordpress             = ""
-  medium                = ""
-  # Professional/Business Oriented Communities
-  linkedin              = ""
-  linkedin_company      = ""
-  foursquare            = ""
-  xing                  = ""
-  slideshare            = ""
-  # Social Networks
-  facebook              = ""
-  googleplus            = ""
-  reddit                = ""
-  quora                 = ""
-  youtube               = ""
-  vimeo                 = ""
-  whatsapp              = "" # WhatsApp Number
-    # WeChat and QQ need testing.
-    wechat              = ""
-    qq                  = "" # User ID Number
-  instagram             = ""
-  tumblr                = ""
-  twitter               = "satya_pavan"
-  skype                 = ""
-  snapchat              = ""
-  pinterest             = ""
-  telegram              = ""
-  vine                  = ""
-  googlescholar         = ""
-  orcid                 = ""
-  researchgate          = ""
-  keybase               = ""
-  mastodon              = ""
-  # Email
-  email                 = ""
+  # search
+  [params.search]
+  enable = true
+
+############################ news letter ########################
+[params.newsletter]
+enable = false
+title = "Join Our Newsletter"
+content = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero"
+
+############################# social site ########################
+
+[[params.social]]
+title = "twitter"
+icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
+link = "#"
+
+[[params.social]]
+title = "github"
+icon = "ti-github" # themify icon : https://themify.me/themify-icons
+link = "#"

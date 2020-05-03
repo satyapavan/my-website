@@ -1,16 +1,23 @@
-+++
-author = "Satya Pavan"
-categories = ["blog"]
-tags = ["productivity"]
-date = "2019-07-05"
-description = "Stop fretting about your github contributions graph"
-#featured = "productivity_1024x.jpg"
-#featuredalt = "productivity"
-featuredpath = ""
-linktitle = ""
-title= "Productivity Hacks"
-type = "post"
-+++
+---
+title: "Productivity Hacks"
+date: 2019-07-05T10:07:47+06:00
+draft: false
+
+# post thumb
+image: "images/post/productivity.jpg"
+
+# meta description
+description: "Stop fretting about your github contributions graph"
+
+# taxonomies
+categories: 
+  - "blog"
+tags:
+  - "productivity"
+
+# post type
+type: "post"
+---
 
 - **Contrasting Personal and Professional roles**
 If you’re productive in one way at work, take the opposite approach in your personal life.

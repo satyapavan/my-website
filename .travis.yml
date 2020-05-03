@@ -21,8 +21,9 @@ script:
   - export GIT_COMMIT_SHA=`git rev-parse --verify HEAD`
   - export GIT_COMMIT_SHA_SHORT=`git rev-parse --short HEAD`
   - export LAST_DEPLOYMENT_TIME="$(date +'%Y-%m-%d %T %Z')"
-  - chmod 755 bin/hugo_0.56.1_Linux-64bit/hugo
-  - bin/hugo_0.56.1_Linux-64bit/hugo -t hugo-future-imperfect-slim
+  - chmod 755 bin/hugo_extended_0.69.2_Linux-64bit/hugo
+  - sed -i "s/__REPLACE__DEPLOY_TIME__/${LAST_DEPLOYMENT_TIME}/g" config.toml
+  - bin/hugo_extended_0.69.2_Linux-64bit/hugo -t tiva-hugo
 
 after_success:
   - pwd && mkdir /home/travis/build/satyapavan/my-site-generated && cd /home/travis/build/satyapavan/my-site-generated
