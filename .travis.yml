@@ -23,7 +23,7 @@ script:
   - export LAST_DEPLOYMENT_TIME="$(date +'%Y-%m-%d %T %Z')"
   - chmod 755 bin/hugo_extended_0.69.2_Linux-64bit/hugo
   - sed -i "s/__REPLACE__DEPLOY_TIME__/${LAST_DEPLOYMENT_TIME}/g" config.toml
-  - bin/hugo_extended_0.69.2_Linux-64bit/hugo -t tiva-hugo
+  - bin/hugo_extended_0.69.2_Linux-64bit/hugo -t liva-hugo
 
 after_success:
   - pwd && mkdir /home/travis/build/satyapavan/my-site-generated && cd /home/travis/build/satyapavan/my-site-generated
