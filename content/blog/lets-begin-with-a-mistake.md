@@ -11,7 +11,7 @@ description: "If you want to eat bread, don't start building a bakery"
 
 # taxonomies
 categories: 
-  - "goals"
+  - "blog"
 tags:
   - "learnings"
   - "goals"
