@@ -4,7 +4,7 @@ date: 2019-02-26T10:07:47+06:00
 draft: false
 
 # post thumb
-image: "images/post/ugh.jpg"
+image: "images/post/please-stay-on-path.jpg"
 
 # meta description
 description: "If you want to eat bread, don't start building a bakery"
