@@ -17,7 +17,7 @@ tags:
   - "fork"
 
 # post type
-type: "post"
+type: "featured"
 ---
 
 A fork bomb works by creating a large number of processes very quickly in order to saturate the available space in the list of processes kept by the computer’s operating system. If the process table becomes saturated, no new programs may start until another process terminates. Even if that happens, it is not likely that a useful program may be started since the instances of the bomb program will each attempt to take any newly-available slot themselves.
